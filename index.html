@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-blue-900 text-white p-5 hidden md:block">
+            <h2 class="text-xl font-bold">Dashboard</h2>
+            <ul class="mt-5">
+                <li class="py-2 hover:bg-blue-700 p-2 rounded cursor-pointer">
+                    <a href="home.html">Home</a>
+                </li>
+                <li class="py-2 hover:bg-blue-700 p-2 rounded cursor-pointer">
+                    <a href="#analytics.html">Analytics</a>
+                </li>
+                <li class="py-2 hover:bg-blue-700 p-2 rounded cursor-pointer">
+                    <a href="#settings.html">Settings</a>
+                </li>
+            </ul>
+            
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Navbar -->
+            <nav class="bg-white p-4 shadow flex justify-between items-center">
+                <button onclick="toggleSidebar()" class="md:hidden p-2 bg-blue-900 text-white rounded">☰</button>
+                <h2 class="text-xl font-semibold">Dashboard</h2>
+                <div class="flex items-center space-x-4">
+                    <span>User</span>
+                    <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
+                </div>
+            </nav>
+            
+            <!-- Dashboard Content -->
+            <main class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-5 shadow rounded-lg">
+                    <h3 class="text-lg font-semibold">Total Sales</h3>
+                    <p class="text-2xl font-bold">$25,000</p>
+                </div>
+                <div class="bg-white p-5 shadow rounded-lg">
+                    <h3 class="text-lg font-semibold">New Users</h3>
+                    <p class="text-2xl font-bold">1,200</p>
+                </div>
+                <div class="bg-white p-5 shadow rounded-lg">
+                    <h3 class="text-lg font-semibold">Performance</h3>
+                    <p class="text-2xl font-bold">85%</p>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
